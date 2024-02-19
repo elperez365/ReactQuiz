@@ -1,3 +1,5 @@
+import correctAnswers from "./answers";
+
 const questionsData = [
   {
     id: "q1",
@@ -71,4 +73,13 @@ const questionsData = [
   },
 ];
 
-export const shuffledQuestions = questionsData.sort(() => Math.random() - 0.5);
+export const questionsWithAnswer = questionsData.map((question, index) => {
+  return {
+    ...question,
+    correctAnswer: correctAnswers[index].correctAnswer,
+  };
+});
+
+export const shuffledQuestions = questionsWithAnswer.sort(
+  () => Math.random() - 0.5
+);

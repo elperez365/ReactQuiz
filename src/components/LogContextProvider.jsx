@@ -1,8 +1,10 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
 export const LogContext = createContext({
   logs: [],
   addLog: () => {},
+  isAnswered: false,
+  setIsAnswered: () => {},
 });
 
 const logReducer = (state, action) => {
@@ -16,8 +18,7 @@ const logReducer = (state, action) => {
 
 export function LogContextProvider({ children }) {
   const [logs, dispatchLog] = useReducer(logReducer, []);
-
-  console.log(logs);
+  const [isAnswered, setIsAnswered] = useState(false);
 
   const addLog = (log) => {
     dispatchLog({ type: "ADD_LOG", payload: log });
@@ -26,6 +27,8 @@ export function LogContextProvider({ children }) {
   const contextData = {
     logs,
     addLog,
+    isAnswered,
+    setIsAnswered,
   };
 
   return (
