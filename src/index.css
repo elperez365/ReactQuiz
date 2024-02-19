@@ -241,6 +241,12 @@ header h1 {
   color: #3a2353;
 }
 
+@media screen and (max-width: 600px) {
+  #summary h2 {
+    font-size: 2rem;
+  }
+}
+
 #summary ol {
   list-style: none;
   margin: 2rem auto;
