@@ -80,6 +80,11 @@ export const questionsWithAnswer = questionsData.map((question, index) => {
   };
 });
 
-export const shuffledQuestions = questionsWithAnswer.sort(
-  () => Math.random() - 0.5
-);
+export const shuffledQuestions = questionsWithAnswer
+  .sort(() => Math.random() - 0.5)
+  .map((question) => {
+    return {
+      ...question,
+      answers: question.answers.sort(() => Math.random() - 0.5),
+    };
+  });

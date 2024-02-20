@@ -8,7 +8,6 @@ export default function Quiz() {
     <div id="quiz">
       <Question />
       <Answers />
-
       <SkipButton />
     </div>
   );
