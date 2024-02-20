@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { LogContext } from "./LogContextProvider";
 import { shuffledQuestions } from "../questions";
 
-export default function SkipButton({ onClick }) {
+export default function SkipButton() {
   const { logs, addLog, isAnswered } = useContext(LogContext);
   const currentQuestion = shuffledQuestions[logs.length];
 
