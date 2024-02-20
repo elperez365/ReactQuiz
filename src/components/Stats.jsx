@@ -1,16 +1,17 @@
 import { useContext } from "react";
 import { LogContext } from "./LogContextProvider";
+import { questionsData } from "../questions";
 
 export default function Stats() {
   const { logs } = useContext(LogContext);
-  const totalQuestions = logs.length;
+  const totalQuestions = questionsData.length;
   const answeredCorrectly = logs.filter(
     (log) => log.isCorrect === "correct"
   ).length;
   const answeredIncorrectly = logs.filter(
     (log) => log.isCorrect === "wrong"
   ).length;
-  const skipped = logs.filter((log) => log.isCorrect === "skipped").length;
+  const skipped = totalQuestions - (answeredCorrectly + answeredIncorrectly);
   return (
     <div id="summary-stats">
       <p>

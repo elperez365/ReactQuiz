@@ -12,6 +12,9 @@ export default function StartPage({ onStart }) {
         If you skip one or more questions you will be given a second chance at
         the end for each skipped question
       </p>
+      <p>
+        if you skip the question for the second time it is considered skipped
+      </p>
       <p>Can you score 100% ?</p>
       <button id="startButton" onClick={() => onStart()}>
         Start
