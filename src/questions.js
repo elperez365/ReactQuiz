@@ -1,6 +1,6 @@
 import correctAnswers from "./answers";
 
-const questionsData = [
+export const questionsData = [
   {
     id: "q1",
     text: "Which of the following definitions best describes React.js?",
