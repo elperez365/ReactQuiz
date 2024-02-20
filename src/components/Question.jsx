@@ -6,7 +6,7 @@ import { shuffledQuestions } from "../questions";
 export default function Question() {
   const { logs, addLog, isAnswered } = useContext(LogContext);
   const currentQuestion = shuffledQuestions[logs.length];
-  const TIMER = 10000;
+  const TIMER = 20000;
 
   const nullishAdd = () => {
     const nullishLog = {
