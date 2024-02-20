@@ -12,6 +12,6 @@ export const nullishAdd = (addLog, currentQuestion, isAnswered) => {
     ...currentQuestion,
     skipped: true,
   };
-  shuffledQuestions.push(skippedQuestion);
+  //   shuffledQuestions.push(skippedQuestion);
   addLog(nullishLog);
 };
