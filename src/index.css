@@ -338,6 +338,36 @@ header h1 {
   letter-spacing: 0.1rem;
 }
 
+.startPage {
+  animation: slide-in-from-bottom 0.7s ease-out;
+  h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    margin: 0;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #3e7c1a 40%, #94c71f 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  P {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.5rem;
+    color: #ebe7ef;
+  }
+  button {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 24px;
+    background: #6cb7f5;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
 @keyframes slide-in-from-bottom {
   0% {
     opacity: 0;
@@ -346,5 +376,19 @@ header h1 {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+#skipButton {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: #9082a3;
+  cursor: pointer;
+  margin-top: 2rem;
+  &:hover,
+  &:focus {
+    color: #c7bfd6;
   }
 }
