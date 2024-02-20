@@ -2,25 +2,16 @@ import { useContext, useEffect } from "react";
 import ProgressBar from "./ProgressBar";
 import { LogContext } from "./LogContextProvider";
 import { shuffledQuestions } from "../questions";
+import { nullishAdd } from "../functions";
 
 export default function Question() {
   const { logs, addLog, isAnswered } = useContext(LogContext);
   const currentQuestion = shuffledQuestions[logs.length];
   const TIMER = 20000;
 
-  const nullishAdd = () => {
-    const nullishLog = {
-      id: currentQuestion.id,
-      question: currentQuestion.text,
-      answer: null,
-      isCorrect: "skipped",
-    };
-    addLog(nullishLog);
-  };
-
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      nullishAdd();
+      nullishAdd(addLog, currentQuestion, isAnswered);
     }, TIMER);
 
     return () => {
