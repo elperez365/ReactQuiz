@@ -1,11 +1,11 @@
 import Answer from "./Answer";
 import { useContext } from "react";
 import { LogContext } from "./LogContextProvider";
-import { shuffledQuestions as questionsData } from "../questions";
+import { shuffledQuestions } from "../questions";
 
 export default function Answers() {
   const { logs, addLog, setIsAnswered, isAnswered } = useContext(LogContext);
-  const currentQuestion = questionsData[logs.length];
+  const currentQuestion = shuffledQuestions[logs.length];
   const answers = currentQuestion.answers;
 
   const onAnswer = (answer) => {
