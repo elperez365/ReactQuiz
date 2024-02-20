@@ -2,8 +2,14 @@ import { useContext } from "react";
 import summaryImg from "../assets/quiz-complete.png";
 import { LogContext } from "./LogContextProvider";
 import Stats from "./Stats";
+import { questionsData } from "../questions";
 export default function Summary() {
   const { logs } = useContext(LogContext);
+
+  const summaryLogs = questionsData.map((log) => {
+    return logs.filter((item) => item.id === log.id).pop();
+  });
+
   return (
     <div id="summary">
       <img src={summaryImg} alt="game-over" />
@@ -11,7 +17,7 @@ export default function Summary() {
       <Stats />
 
       <ol>
-        {logs.map((log, index) => (
+        {summaryLogs.map((log, index) => (
           <li key={index}>
             <h3>{index + 1}</h3>
             <span className="question">{log.question}</span>

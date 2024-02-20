@@ -21,6 +21,7 @@ export default function Question() {
 
   return (
     <div id="question">
+      {currentQuestion.skipped && <h3 id="second-chance">Second Chance</h3>}
       <ProgressBar
         TIMER={TIMER}
         changedQuestion={currentQuestion}

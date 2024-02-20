@@ -8,10 +8,11 @@ export const nullishAdd = (addLog, currentQuestion, isAnswered) => {
     answer: null,
     isCorrect: "skipped",
   };
+  addLog(nullishLog);
+  if (currentQuestion.skipped) return;
   const skippedQuestion = {
     ...currentQuestion,
     skipped: true,
   };
-  //   shuffledQuestions.push(skippedQuestion);
-  addLog(nullishLog);
+  shuffledQuestions.push(skippedQuestion);
 };
